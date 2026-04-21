@@ -1,38 +1,300 @@
 import { StyleSheet } from 'react-native';
-import { Colors } from './colors';
+import { DarkColors, LightColors } from '../context/ThemeContext';
 
-export const chatStyles = StyleSheet.create({
+export const createChatStyles = (colors: typeof DarkColors | typeof LightColors) => StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.background,
+    backgroundColor: colors.background,
   },
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    marginTop: 38,
     padding: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: colors.border,
   },
   headerTitle: {
-    color: Colors.textPrimary,
+    color: colors.textPrimary,
     fontSize: 24,
     fontWeight: 'bold',
   },
-  centerContainer: {
+  newChatButton: {
+    backgroundColor: colors.gold,
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 20,
+  },
+  newChatText: {
+    color: colors.background,
+    fontWeight: 'bold',
+  },
+  chatList: {
     flex: 1,
+  },
+  chatItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: colors.border,
+  },
+  avatar: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    marginRight: 12,
+  },
+  chatInfo: {
+    flex: 1,
+  },
+  chatHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 4,
+  },
+  chatName: {
+    color: colors.textPrimary,
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  chatTime: {
+    color: colors.textSecondary,
+    fontSize: 12,
+  },
+  lastMessage: {
+    color: colors.textSecondary,
+    fontSize: 14,
+  },
+  unreadBadge: {
+    backgroundColor: colors.gold,
+    borderRadius: 10,
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+  },
+  unreadText: {
+    color: colors.background,
+    fontSize: 10,
+    fontWeight: 'bold',
+  },
+  groupBadge: {
+    backgroundColor: colors.goldLight,
+    borderRadius: 4,
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+    marginLeft: 8,
+  },
+  groupText: {
+    color: colors.gold,
+    fontSize: 10,
+  },
+  chatWindow: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: colors.background,
+  },
+  chatWindowHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: colors.border,
+    backgroundColor: colors.surface,
+  },
+  backButton: {
+    padding: 8,
+  },
+  chatWindowTitle: {
+    color: colors.textPrimary,
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  winnerButton: {
+    backgroundColor: colors.success,
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 20,
+  },
+  winnerText: {
+    color: colors.background,
+    fontWeight: 'bold',
+    fontSize: 12,
+  },
+  messagesContainer: {
+    padding: 16,
+  },
+  messageBubble: {
+    maxWidth: '80%',
+    padding: 12,
+    borderRadius: 20,
+    marginBottom: 12,
+  },
+  myMessage: {
+    backgroundColor: colors.gold,
+    alignSelf: 'flex-end',
+    borderBottomRightRadius: 4,
+  },
+  theirMessage: {
+    backgroundColor: colors.surface,
+    alignSelf: 'flex-start',
+    borderBottomLeftRadius: 4,
+  },
+  messageText: {
+    color: colors.textPrimary,
+    fontSize: 14,
+  },
+  myMessageText: {
+    color: colors.background,
+  },
+  messageTime: {
+    fontSize: 10,
+    color: colors.textTertiary,
+    marginTop: 4,
+  },
+  myMessageTime: {
+    color: colors.background + '99',
+  },
+  coinOfferCard: {
+    backgroundColor: colors.surface,
+    borderRadius: 16,
+    padding: 12,
+    marginBottom: 12,
+    borderWidth: 1,
+    borderColor: colors.gold,
+    alignSelf: 'flex-start',
+    maxWidth: '80%',
+  },
+  coinOfferAmount: {
+    color: colors.gold,
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  coinOfferLabel: {
+    color: colors.textSecondary,
+    fontSize: 12,
+  },
+  acceptOfferButton: {
+    backgroundColor: colors.success,
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderRadius: 20,
+    marginTop: 8,
+  },
+  acceptOfferText: {
+    color: colors.background,
+    fontWeight: 'bold',
+    fontSize: 12,
+  },
+  screenshotMessage: {
+    backgroundColor: colors.surface,
+    borderRadius: 16,
+    padding: 8,
+    marginBottom: 12,
+    alignSelf: 'flex-start',
+    maxWidth: '80%',
+  },
+  screenshotImage: {
+    width: 200,
+    height: 200,
+    borderRadius: 12,
+  },
+  screenshotLabel: {
+    color: colors.textSecondary,
+    fontSize: 10,
+    marginTop: 4,
+    textAlign: 'center',
+  },
+  inputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 12,
+    backgroundColor: colors.surface,
+    borderTopWidth: 1,
+    borderTopColor: colors.border,
+  },
+  attachButton: {
+    padding: 8,
+  },
+  coinButton: {
+    backgroundColor: colors.gold,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    borderRadius: 20,
+    marginHorizontal: 8,
+  },
+  coinButtonText: {
+    color: colors.background,
+    fontWeight: 'bold',
+    fontSize: 12,
+  },
+  input: {
+    flex: 1,
+    backgroundColor: colors.surfaceLight,
+    color: colors.textPrimary,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    borderRadius: 20,
+    marginHorizontal: 8,
+  },
+  sendButton: {
+    padding: 8,
+  },
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: '#000000CC',
     justifyContent: 'center',
     alignItems: 'center',
   },
-  centerText: {
-    color: Colors.textPrimary,
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginTop: 16,
+  modalContent: {
+    backgroundColor: colors.surface,
+    borderRadius: 20,
+    padding: 20,
+    width: '80%',
   },
-  centerSubtext: {
-    color: Colors.textSecondary,
-    fontSize: 14,
-    marginTop: 8,
-    textAlign: 'center',
-    paddingHorizontal: 40,
+  modalTitle: {
+    color: colors.textPrimary,
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 16,
+  },
+  modalInput: {
+    backgroundColor: colors.surfaceLight,
+    color: colors.textPrimary,
+    padding: 12,
+    borderRadius: 10,
+    marginBottom: 16,
+  },
+  modalButtons: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  modalCancel: {
+    flex: 1,
+    padding: 12,
+    borderRadius: 10,
+    marginRight: 8,
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: colors.textSecondary,
+  },
+  modalCancelText: {
+    color: colors.textSecondary,
+  },
+  modalConfirm: {
+    flex: 1,
+    backgroundColor: colors.gold,
+    padding: 12,
+    borderRadius: 10,
+    marginLeft: 8,
+    alignItems: 'center',
+  },
+  modalConfirmText: {
+    color: colors.background,
+    fontWeight: 'bold',
   },
 });

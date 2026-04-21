@@ -8,9 +8,13 @@ import {
   Modal,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { profileStyles as styles } from '../styles/profileStyles';
+import { useTheme } from '../context/ThemeContext';
+import { createProfileStyles } from '../styles/profileStyles';
 
 export default function ProfileScreen() {
+  const { colors } = useTheme();
+  const styles = createProfileStyles(colors);
+  
   const [isEditing, setIsEditing] = useState(false);
   const [bio, setBio] = useState(
     '🏆 Professional gamer | COD & FIFA specialist | Available for high-stake matches'
@@ -93,7 +97,7 @@ export default function ProfileScreen() {
             <Text style={styles.handle}>{profile.handle}</Text>
 
             <View style={styles.coinRow}>
-              <Ionicons name="logo-bitcoin" size={16} color="#facc15" />
+              <Ionicons name="logo-bitcoin" size={16} color={colors.gold} />
               <Text style={styles.coins}>
                 {profile.coins.toLocaleString()} Coins
               </Text>
@@ -122,7 +126,7 @@ export default function ProfileScreen() {
           </View>
 
           <View style={styles.statCard}>
-            <Text style={[styles.statValue, { color: '#00E676' }]}>
+            <Text style={[styles.statValue, { color: colors.success }]}>
               {profile.winRate}%
             </Text>
             <Text style={styles.statLabel}>Win Rate</Text>
@@ -148,7 +152,7 @@ export default function ProfileScreen() {
       <View style={styles.achievementsRow}>
         {profile.achievements.map((ach, i) => (
           <View key={i} style={styles.achievementCircle}>
-            <Ionicons name="trophy" size={20} color="#facc15" />
+            <Ionicons name="trophy" size={20} color={colors.gold} />
             <Text style={styles.achievementLabel}>{ach}</Text>
           </View>
         ))}
@@ -180,8 +184,8 @@ export default function ProfileScreen() {
                   {
                     backgroundColor:
                       post.result === 'Victory'
-                        ? '#00C85320'
-                        : '#FF3B3020',
+                        ? colors.successLight
+                        : colors.errorLight,
                   },
                 ]}
               >
@@ -189,8 +193,8 @@ export default function ProfileScreen() {
                   style={{
                     color:
                       post.result === 'Victory'
-                        ? '#00E676'
-                        : '#FF3B30',
+                        ? colors.success
+                        : colors.error,
                     fontSize: 12,
                   }}
                 >
@@ -209,7 +213,7 @@ export default function ProfileScreen() {
                   styles.postCoins,
                   {
                     color:
-                      post.coins > 0 ? '#00E676' : '#FF3B30',
+                      post.coins > 0 ? colors.success : colors.error,
                   },
                 ]}
               >
@@ -230,18 +234,18 @@ export default function ProfileScreen() {
               <Ionicons
                 name={post.liked ? 'heart' : 'heart-outline'}
                 size={18}
-                color={post.liked ? '#FF3B30' : '#9ca3af'}
+                color={post.liked ? colors.error : colors.textSecondary}
               />
               <Text style={styles.actionText}>{post.likes}</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.actionBtn}>
-              <Ionicons name="chatbubble-outline" size={18} color="#9ca3af" />
+              <Ionicons name="chatbubble-outline" size={18} color={colors.textSecondary} />
               <Text style={styles.actionText}>{post.comments}</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.actionBtn}>
-              <Ionicons name="share-social-outline" size={18} color="#9ca3af" />
+              <Ionicons name="share-social-outline" size={18} color={colors.textSecondary} />
               <Text style={styles.actionText}>Share</Text>
             </TouchableOpacity>
 
@@ -259,7 +263,7 @@ export default function ProfileScreen() {
               value={bio}
               onChangeText={setBio}
               placeholder="Edit bio..."
-              placeholderTextColor="#6b7280"
+              placeholderTextColor={colors.textTertiary}
               style={styles.modalInput}
               multiline
             />

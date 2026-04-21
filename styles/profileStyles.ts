@@ -1,17 +1,19 @@
 import { StyleSheet } from 'react-native';
+import { DarkColors, LightColors } from '../context/ThemeContext';
 
-export const profileStyles = StyleSheet.create({
+export const createProfileStyles = (colors: typeof DarkColors | typeof LightColors) => StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0f172a',
+    backgroundColor: colors.background,
   },
 
   /* ================= HEADER CARD ================= */
   headerCard: {
-    margin: 16,
+    margin: 15,
+    marginTop: 38,
     padding: 16,
     borderRadius: 20,
-    backgroundColor: '#111827',
+    backgroundColor: colors.surface,
   },
 
   topRow: {
@@ -23,19 +25,19 @@ export const profileStyles = StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius: 30,
-    backgroundColor: '#f59e0b',
+    backgroundColor: colors.gold,
     justifyContent: 'center',
     alignItems: 'center',
   },
 
   name: {
-    color: '#fff',
+    color: colors.textPrimary,
     fontSize: 18,
     fontWeight: 'bold',
   },
 
   handle: {
-    color: '#9ca3af',
+    color: colors.textSecondary,
     fontSize: 13,
     marginTop: 2,
   },
@@ -47,7 +49,7 @@ export const profileStyles = StyleSheet.create({
   },
 
   coins: {
-    color: '#facc15',
+    color: colors.gold,
     marginLeft: 6,
     fontWeight: '600',
   },
@@ -55,7 +57,7 @@ export const profileStyles = StyleSheet.create({
   editBtn: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#facc15',
+    backgroundColor: colors.gold,
     paddingHorizontal: 10,
     paddingVertical: 6,
     borderRadius: 10,
@@ -76,7 +78,7 @@ export const profileStyles = StyleSheet.create({
 
   statCard: {
     flex: 1,
-    backgroundColor: '#1f2937',
+    backgroundColor: colors.surfaceLight,
     marginHorizontal: 4,
     paddingVertical: 14,
     borderRadius: 12,
@@ -84,13 +86,13 @@ export const profileStyles = StyleSheet.create({
   },
 
   statValue: {
-    color: '#facc15',
+    color: colors.gold,
     fontSize: 18,
     fontWeight: 'bold',
   },
 
   statLabel: {
-    color: '#9ca3af',
+    color: colors.textSecondary,
     fontSize: 12,
     marginTop: 4,
   },
@@ -103,13 +105,13 @@ export const profileStyles = StyleSheet.create({
   },
 
   followText: {
-    color: '#9ca3af',
+    color: colors.textSecondary,
     fontSize: 13,
   },
 
   /* ================= BIO ================= */
   bio: {
-    color: '#9ca3af',
+    color: colors.textSecondary,
     fontSize: 13,
     marginHorizontal: 16,
     marginTop: 6,
@@ -118,7 +120,7 @@ export const profileStyles = StyleSheet.create({
 
   /* ================= SECTION ================= */
   sectionTitle: {
-    color: '#fff',
+    color: colors.textPrimary,
     fontSize: 14,
     fontWeight: 'bold',
     marginHorizontal: 16,
@@ -139,7 +141,7 @@ export const profileStyles = StyleSheet.create({
   },
 
   achievementLabel: {
-    color: '#9ca3af',
+    color: colors.textSecondary,
     fontSize: 11,
     marginTop: 6,
   },
@@ -149,14 +151,14 @@ export const profileStyles = StyleSheet.create({
     flexDirection: 'row',
     marginHorizontal: 16,
     marginTop: 10,
-    backgroundColor: '#1f2937',
+    backgroundColor: colors.surfaceLight,
     borderRadius: 30,
     overflow: 'hidden',
   },
 
   activeTab: {
     flex: 1,
-    backgroundColor: '#f59e0b',
+    backgroundColor: colors.gold,
     paddingVertical: 10,
     alignItems: 'center',
     borderRadius: 20,
@@ -174,12 +176,12 @@ export const profileStyles = StyleSheet.create({
   },
 
   inactiveTabText: {
-    color: '#9ca3af',
+    color: colors.textSecondary,
   },
 
   /* ================= POSTS ================= */
   postCard: {
-    backgroundColor: '#1f2937',
+    backgroundColor: colors.surface,
     marginHorizontal: 16,
     marginTop: 14,
     borderRadius: 16,
@@ -187,20 +189,19 @@ export const profileStyles = StyleSheet.create({
   },
 
   postGame: {
-    color: '#fff',
+    color: colors.textPrimary,
     fontSize: 15,
     fontWeight: '600',
-    
   },
 
   postOpponent: {
-    color: '#9ca3af',
+    color: colors.textSecondary,
     fontSize: 12,
     marginTop: 4,
   },
 
   postTime: {
-    color: '#6b7280',
+    color: colors.textTertiary,
     fontSize: 11,
     marginTop: 4,
   },
@@ -221,12 +222,11 @@ export const profileStyles = StyleSheet.create({
   /* ================= ACTIONS ================= */
   actionsRow: {
     flexDirection: 'row',
-    display: 'flex',
-    paddingHorizontal: 5, 
+    paddingHorizontal: 5,
     marginTop: 14,
     paddingTop: 10,
     borderTopWidth: 1,
-    borderTopColor: '#374151',
+    borderTopColor: colors.border,
   },
 
   actionBtn: {
@@ -236,10 +236,9 @@ export const profileStyles = StyleSheet.create({
   },
 
   actionText: {
-    color: '#9ca3af',
+    color: colors.textSecondary,
     marginLeft: 6,
     fontSize: 12,
-    
   },
 
   /* ================= MODAL ================= */
@@ -250,29 +249,29 @@ export const profileStyles = StyleSheet.create({
   },
 
   modalContent: {
-    backgroundColor: '#111827',
+    backgroundColor: colors.surface,
     margin: 20,
     borderRadius: 20,
     padding: 20,
   },
 
   modalTitle: {
-    color: '#fff',
+    color: colors.textPrimary,
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 16,
   },
 
   modalInput: {
-    backgroundColor: '#1f2937',
-    color: '#fff',
+    backgroundColor: colors.surfaceLight,
+    color: colors.textPrimary,
     padding: 12,
     borderRadius: 10,
     marginBottom: 15,
   },
 
   modalButton: {
-    backgroundColor: '#facc15',
+    backgroundColor: colors.gold,
     padding: 12,
     borderRadius: 10,
     alignItems: 'center',
