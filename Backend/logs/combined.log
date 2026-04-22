@@ -1,0 +1,27 @@
+[2026-04-22 22:03:16] INFO: MongoDB connected → 127.0.0.1 / coins_app
+[2026-04-22 22:03:16] INFO: [Socket] Socket.io initialised
+[2026-04-22 22:03:16] INFO: 🚀 COINS APP Server running on port 5000
+[2026-04-22 22:03:16] INFO: 🌍 Environment: development
+[2026-04-22 22:03:17] INFO: Mongoose → users.createIndex
+[2026-04-22 22:03:17] INFO: Mongoose → follows.createIndex
+[2026-04-22 22:03:17] INFO: Mongoose → posts.createIndex
+[2026-04-22 22:03:17] INFO: Mongoose → servers.createIndex
+[2026-04-22 22:03:17] INFO: Mongoose → transactions.createIndex
+[2026-04-22 22:03:17] INFO: Mongoose → badges.createIndex
+[2026-04-22 22:03:17] INFO: Mongoose → games.createIndex
+[2026-04-22 22:03:17] INFO: Mongoose → messages.createIndex
+[2026-04-22 22:03:17] INFO: Mongoose → notifications.createIndex
+[2026-04-22 22:03:17] INFO: Mongoose → follows.createIndex
+[2026-04-22 22:03:17] INFO: Mongoose → transactions.createIndex
+[2026-04-22 22:03:17] INFO: Mongoose → users.createIndex
+[2026-04-22 22:03:17] INFO: Mongoose → reports.createIndex
+[2026-04-22 22:03:17] INFO: Mongoose → messages.createIndex
+[2026-04-22 22:03:17] INFO: Mongoose → games.createIndex
+[2026-04-22 22:03:17] INFO: Mongoose → transactions.createIndex
+[2026-04-22 22:03:17] INFO: Mongoose → users.createIndex
+[2026-04-22 22:03:17] INFO: Mongoose → users.createIndex
+[2026-04-22 22:03:17] INFO: Mongoose → reports.createIndex
+[2026-04-22 22:03:17] INFO: Mongoose → games.createIndex
+[2026-04-22 22:03:17] INFO: Mongoose → transactions.createIndex
+[2026-04-22 22:03:17] INFO: Mongoose → reports.createIndex
+[2026-04-22 22:03:17] INFO: Mongoose → games.createIndex
